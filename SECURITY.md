@@ -8,8 +8,6 @@ If you discover a security vulnerability in **SOC Analyst AI**, please help us p
 
 **DO NOT** create a public GitHub issue for security vulnerabilities.
 
-Instead, please email: **security@example.com** (replace with your email)
-
 Include in your report:
 - Description of the vulnerability
 - Steps to reproduce
@@ -195,3 +193,4 @@ SOC Analyst AI processes security logs which may contain:
 
 **Last Updated**: 2025-10-22  
 **Version**: 1.0.0
+
