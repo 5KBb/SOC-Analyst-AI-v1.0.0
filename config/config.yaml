@@ -1,0 +1,212 @@
+# ========================================
+# AI SOC ANALYST - Configuration File
+# ========================================
+
+# General Settings
+general:
+  timezone: "UTC"
+  log_level: "INFO"
+  output_dir: "reports"
+  temp_dir: "temp"
+  max_threads: 4
+
+# Severity Thresholds
+severity:
+  low_score: 0-3
+  medium_score: 4-6
+  high_score: 7-8
+  critical_score: 9-10
+
+# Log Parsing Configuration
+parsers:
+  auto_detect: true
+  supported_formats:
+    - firewall
+    - ids_ips
+    - edr
+    - windows_event
+    - syslog
+    - proxy
+    - dns
+    - application
+  encoding: "utf-8"
+  max_file_size_mb: 500
+
+# Threat Detection
+detection:
+  enable_ml: true
+  confidence_threshold: 0.7
+  false_positive_learning: true
+  ioc_enrichment: true
+  
+# MITRE ATT&CK
+mitre:
+  enable: true
+  auto_map: true
+  framework_version: "v13"
+  data_source: "https://raw.githubusercontent.com/mitre/cti/master/enterprise-attack/enterprise-attack.json"
+  update_interval_days: 7
+
+# Correlation Engine
+correlation:
+  enable: true
+  time_window_minutes: 60
+  min_events: 2
+  techniques:
+    - temporal
+    - source_ip
+    - destination_ip
+    - user_account
+    - process_name
+
+# Threat Intelligence Integration
+threat_intel:
+  enable: true
+  
+  # VirusTotal
+  virustotal:
+    enable: false
+    api_key: "YOUR_VT_API_KEY"
+    rate_limit: 4  # requests per minute
+  
+  # AbuseIPDB
+  abuseipdb:
+    enable: false
+    api_key: "YOUR_ABUSEIPDB_KEY"
+  
+  # AlienVault OTX
+  alienvault_otx:
+    enable: false
+    api_key: "YOUR_OTX_KEY"
+  
+  # MISP
+  misp:
+    enable: false
+    url: "https://your-misp-instance.com"
+    api_key: "YOUR_MISP_KEY"
+    verify_ssl: true
+
+# SIEM Integration
+siem:
+  # Elasticsearch
+  elasticsearch:
+    enable: false
+    host: "localhost"
+    port: 9200
+    index: "soc-alerts"
+    username: "elastic"
+    password: "YOUR_ES_PASSWORD"
+    use_ssl: false
+  
+  # Splunk
+  splunk:
+    enable: false
+    host: "localhost"
+    port: 8089
+    username: "admin"
+    password: "YOUR_SPLUNK_PASSWORD"
+    index: "security"
+
+# Ticketing Integration
+ticketing:
+  # Jira
+  jira:
+    enable: false
+    url: "https://your-instance.atlassian.net"
+    username: "your-email@company.com"
+    api_token: "YOUR_JIRA_TOKEN"
+    project_key: "SEC"
+    issue_type: "Incident"
+    auto_create: false
+    severity_mapping:
+      critical: "Highest"
+      high: "High"
+      medium: "Medium"
+      low: "Low"
+  
+  # ServiceNow
+  servicenow:
+    enable: false
+    instance: "your-instance"
+    username: "admin"
+    password: "YOUR_SNOW_PASSWORD"
+    table: "incident"
+    auto_create: false
+
+# Report Generation
+reporting:
+  format: "pdf"
+  language: "en"
+  include_executive_summary: true
+  include_timeline: true
+  include_mitre_mapping: true
+  include_ioc_list: true
+  include_recommendations: true
+  logo_path: "data/templates/logo.png"
+  company_name: "Your Organization"
+  
+  # PDF Options
+  pdf:
+    page_size: "A4"
+    font_family: "Helvetica"
+    include_toc: true
+    watermark: false
+
+# Alert Notifications
+notifications:
+  enable: false
+  
+  # Email
+  email:
+    enable: false
+    smtp_server: "smtp.gmail.com"
+    smtp_port: 587
+    use_tls: true
+    username: "alerts@company.com"
+    password: "YOUR_EMAIL_PASSWORD"
+    from_address: "soc@company.com"
+    to_addresses:
+      - "security-team@company.com"
+    severity_filter: ["high", "critical"]
+  
+  # Slack
+  slack:
+    enable: false
+    webhook_url: "https://hooks.slack.com/services/YOUR/WEBHOOK/URL"
+    channel: "#security-alerts"
+    severity_filter: ["high", "critical"]
+
+# Database
+database:
+  type: "sqlite"
+  path: "data/ioc_database/soc_db.sqlite"
+  # For PostgreSQL:
+  # type: "postgresql"
+  # host: "localhost"
+  # port: 5432
+  # database: "soc_db"
+  # username: "postgres"
+  # password: "YOUR_DB_PASSWORD"
+
+# Logging
+logging:
+  console_output: true
+  file_output: true
+  log_file: "logs/soc_analyst.log"
+  max_file_size_mb: 100
+  backup_count: 5
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+# Performance
+performance:
+  cache_enabled: true
+  cache_ttl_seconds: 3600
+  batch_processing: true
+  batch_size: 1000
+
+# Advanced Options
+advanced:
+  debug_mode: false
+  verbose_output: false
+  save_intermediate_results: false
+  custom_rules_dir: "data/rules/custom"

@@ -1,0 +1,79 @@
+# Sample Windows Event Logs for Testing
+
+# Failed Logon Attempts (Event ID 4625)
+Event ID: 4625
+Date: 10/22/2024 10:30:15 AM
+Computer: WORKSTATION-01
+User: DOMAIN\john.doe
+IP Address: 192.168.1.150
+Message: An account failed to log on. Subject: Security ID: NULL SID Account Name: - Account Domain: - Logon ID: 0x0 Logon Type: 3 Account For Which Logon Failed: Security ID: NULL SID Account Name: john.doe
+
+Event ID: 4625
+Date: 10/22/2024 10:30:20 AM
+Computer: WORKSTATION-01
+User: DOMAIN\john.doe
+IP Address: 192.168.1.150
+Message: An account failed to log on. Logon Type: 3 Account For Which Logon Failed: john.doe
+
+Event ID: 4625
+Date: 10/22/2024 10:30:25 AM
+Computer: WORKSTATION-01
+User: DOMAIN\john.doe
+IP Address: 192.168.1.150
+Message: An account failed to log on. Logon Type: 3 Account For Which Logon Failed: john.doe
+
+Event ID: 4625
+Date: 10/22/2024 10:30:30 AM
+Computer: WORKSTATION-01
+User: DOMAIN\john.doe
+IP Address: 192.168.1.150
+Message: An account failed to log on. Logon Type: 3 Account For Which Logon Failed: john.doe
+
+Event ID: 4625
+Date: 10/22/2024 10:30:35 AM
+Computer: WORKSTATION-01
+User: DOMAIN\john.doe
+IP Address: 192.168.1.150
+Message: An account failed to log on. Logon Type: 3 Account For Which Logon Failed: john.doe
+
+# Audit Log Cleared (Event ID 1102) - CRITICAL
+Event ID: 1102
+Date: 10/22/2024 11:00:00 AM
+Computer: DC-01
+User: DOMAIN\administrator
+Message: The audit log was cleared. Subject: Security ID: S-1-5-21-123456789-123456789-123456789-500 Account Name: administrator
+
+# New Service Installed (Event ID 7045)
+Event ID: 7045
+Date: 10/22/2024 11:15:30 AM
+Computer: SERVER-01
+User: SYSTEM
+Message: A service was installed in the system. Service Name: SuspiciousService Service File Name: C:\Windows\Temp\malware.exe Service Type: user mode service
+
+# PowerShell Script Block (Event ID 4104)
+Event ID: 4104
+Date: 10/22/2024 11:30:00 AM
+Computer: WORKSTATION-02
+User: DOMAIN\alice.smith
+Message: Creating Scriptblock text (1 of 1): powershell.exe -encodedCommand JABjAGwAaQBlAG4AdAAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0
+
+# User Added to Administrators Group (Event ID 4732)
+Event ID: 4732
+Date: 10/22/2024 12:00:00 PM
+Computer: DC-01
+User: DOMAIN\administrator
+Message: A member was added to a security-enabled local group. Subject: Account Name: administrator Group: Name: Administrators Member: Security ID: S-1-5-21-123456789-123456789-123456789-1105 Account Name: NewAdmin
+
+# Special Privileges Assigned (Event ID 4672)
+Event ID: 4672
+Date: 10/22/2024 12:15:00 PM
+Computer: DC-01
+User: DOMAIN\NewAdmin
+Message: Special privileges assigned to new logon. Subject: Account Name: NewAdmin Privileges: SeDebugPrivilege SeTcbPrivilege SeBackupPrivilege
+
+# Process Creation (Event ID 4688)
+Event ID: 4688
+Date: 10/22/2024 12:30:00 PM
+Computer: WORKSTATION-03
+User: DOMAIN\bob.jones
+Message: A new process has been created. Creator Subject: Account Name: bob.jones New Process Name: C:\Windows\System32\cmd.exe Process Command Line: cmd.exe /c whoami /priv

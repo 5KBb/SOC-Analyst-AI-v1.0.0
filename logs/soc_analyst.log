@@ -1,0 +1,28 @@
+2025-10-22 13:18:34 | INFO     | src.utils.logger:setup_logger:59 - Logger initialized with level: INFO
+2025-10-22 13:18:34 | INFO     | __main__:auto_detect_parser:53 - Auto-detecting log type for: data/samples/sample_firewall.log
+2025-10-22 13:18:34 | INFO     | __main__:auto_detect_parser:66 - Detected: Firewall Log
+2025-10-22 13:18:34 | INFO     | src.parsers.base_parser:parse_file:111 - Parsing firewall log file: data/samples/sample_firewall.log
+2025-10-22 13:18:34 | INFO     | src.parsers.base_parser:parse_file:147 - Parsed 24 events from 31 lines
+2025-10-22 13:18:34 | INFO     | src.parsers.base_parser:parse_file:148 - Found 21 suspicious events
+2025-10-22 13:18:34 | INFO     | src.analyzers.threat_analyzer:analyze:69 - Analyzing 24 events...
+2025-10-22 13:18:34 | INFO     | src.analyzers.threat_analyzer:analyze:94 - Analysis complete. Threat score: 5.625/10
+2025-10-22 13:18:34 | INFO     | src.analyzers.ioc_detector:detect:56 - Detecting IOCs from 24 events...
+2025-10-22 13:18:34 | INFO     | src.analyzers.ioc_detector:detect:85 - Detected 5 unique IOCs
+2025-10-22 13:18:34 | INFO     | src.mitre.mitre_mapper:map_events:30 - Mapping 24 events to MITRE ATT&CK...
+2025-10-22 13:18:34 | INFO     | src.mitre.mitre_mapper:map_events:67 - Mapped to 1 MITRE ATT&CK techniques
+2025-10-22 13:18:34 | INFO     | src.reporting.pdf_generator:generate_report:119 - Generating PDF report: reports/soc_report_20251022_131834.pdf
+2025-10-22 13:18:34 | INFO     | src.reporting.pdf_generator:generate_report:160 - PDF report generated successfully: reports/soc_report_20251022_131834.pdf
+2025-10-22 13:20:15 | INFO     | src.utils.logger:setup_logger:59 - Logger initialized with level: INFO
+2025-10-22 13:20:15 | INFO     | __main__:auto_detect_parser:53 - Auto-detecting log type for: data/samples/sample_windows.log
+2025-10-22 13:20:15 | INFO     | __main__:auto_detect_parser:62 - Detected: Windows Event Log
+2025-10-22 13:20:15 | INFO     | src.parsers.base_parser:parse_file:111 - Parsing windows_event log file: data/samples/sample_windows.log
+2025-10-22 13:20:15 | INFO     | src.parsers.base_parser:parse_file:147 - Parsed 11 events from 79 lines
+2025-10-22 13:20:15 | INFO     | src.parsers.base_parser:parse_file:148 - Found 7 suspicious events
+2025-10-22 13:20:15 | INFO     | src.analyzers.threat_analyzer:analyze:69 - Analyzing 11 events...
+2025-10-22 13:20:15 | INFO     | src.analyzers.threat_analyzer:analyze:94 - Analysis complete. Threat score: 3.909090909090909/10
+2025-10-22 13:20:15 | INFO     | src.analyzers.ioc_detector:detect:56 - Detecting IOCs from 11 events...
+2025-10-22 13:20:15 | INFO     | src.analyzers.ioc_detector:detect:85 - Detected 0 unique IOCs
+2025-10-22 13:20:15 | INFO     | src.mitre.mitre_mapper:map_events:30 - Mapping 11 events to MITRE ATT&CK...
+2025-10-22 13:20:15 | INFO     | src.mitre.mitre_mapper:map_events:67 - Mapped to 1 MITRE ATT&CK techniques
+2025-10-22 13:20:15 | INFO     | src.reporting.pdf_generator:generate_report:119 - Generating PDF report: reports/windows_analysis.pdf
+2025-10-22 13:20:15 | INFO     | src.reporting.pdf_generator:generate_report:160 - PDF report generated successfully: reports/windows_analysis.pdf

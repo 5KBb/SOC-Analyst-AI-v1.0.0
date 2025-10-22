@@ -1,0 +1,31 @@
+# Sample Firewall Logs for Testing
+
+# Cisco ASA Format
+%ASA-4-106023: Deny tcp src outside:192.168.1.100/45678 dst inside:10.0.0.50/22 by access-group "outside_in"
+%ASA-4-106023: Deny tcp src outside:192.168.1.100/45679 dst inside:10.0.0.50/22 by access-group "outside_in"
+%ASA-4-106023: Deny tcp src outside:192.168.1.100/45680 dst inside:10.0.0.50/22 by access-group "outside_in"
+%ASA-4-106023: Deny tcp src outside:192.168.1.100/45681 dst inside:10.0.0.50/22 by access-group "outside_in"
+%ASA-4-106023: Deny tcp src outside:192.168.1.100/45682 dst inside:10.0.0.50/22 by access-group "outside_in"
+%ASA-3-106014: Deny inbound icmp src outside:192.168.1.101 dst inside:10.0.0.1
+%ASA-6-302013: Built outbound TCP connection 12345 for outside:80.80.80.80/80 to inside:10.0.0.100/54321
+%ASA-4-106023: Deny tcp src outside:192.168.1.100/45683 dst inside:10.0.0.50/3389 by access-group "outside_in"
+%ASA-4-106023: Deny tcp src outside:192.168.1.100/45684 dst inside:10.0.0.50/3389 by access-group "outside_in"
+%ASA-4-106023: Deny tcp src outside:45.76.123.45/12345 dst inside:10.0.0.75/445 by access-group "outside_in"
+
+# Fortinet Format
+date=2024-10-22 time=10:15:30 devname="FW-01" action=deny srcip=203.0.113.45 dstip=10.0.0.50 srcport=54321 dstport=22 proto=TCP msg="SSH connection attempt blocked"
+date=2024-10-22 time=10:15:31 devname="FW-01" action=deny srcip=203.0.113.45 dstip=10.0.0.50 srcport=54322 dstport=22 proto=TCP msg="SSH connection attempt blocked"
+date=2024-10-22 time=10:15:32 devname="FW-01" action=deny srcip=203.0.113.45 dstip=10.0.0.50 srcport=54323 dstport=22 proto=TCP msg="SSH connection attempt blocked"
+date=2024-10-22 time=10:15:33 devname="FW-01" action=deny srcip=203.0.113.45 dstip=10.0.0.50 srcport=54324 dstport=22 proto=TCP msg="SSH connection attempt blocked"
+date=2024-10-22 time=10:15:34 devname="FW-01" action=deny srcip=203.0.113.45 dstip=10.0.0.50 srcport=54325 dstport=22 proto=TCP msg="SSH connection attempt blocked"
+date=2024-10-22 time=10:16:15 devname="FW-01" action=accept srcip=10.0.0.100 dstip=8.8.8.8 srcport=45678 dstport=53 proto=UDP msg="DNS query allowed"
+date=2024-10-22 time=10:17:20 devname="FW-01" action=deny srcip=185.220.101.23 dstip=10.0.0.80 srcport=8080 dstport=445 proto=TCP msg="SMB access attempt blocked"
+
+# iptables Format
+Oct 22 10:20:15 firewall kernel: IN=eth0 OUT= SRC=198.51.100.75 DST=10.0.0.50 PROTO=TCP SPT=12345 DPT=22 DROP
+Oct 22 10:20:16 firewall kernel: IN=eth0 OUT= SRC=198.51.100.75 DST=10.0.0.50 PROTO=TCP SPT=12346 DPT=22 DROP
+Oct 22 10:20:17 firewall kernel: IN=eth0 OUT= SRC=198.51.100.75 DST=10.0.0.50 PROTO=TCP SPT=12347 DPT=22 DROP
+Oct 22 10:20:18 firewall kernel: IN=eth0 OUT= SRC=198.51.100.75 DST=10.0.0.50 PROTO=TCP SPT=12348 DPT=22 DROP
+Oct 22 10:20:19 firewall kernel: IN=eth0 OUT= SRC=198.51.100.75 DST=10.0.0.50 PROTO=TCP SPT=12349 DPT=22 DROP
+Oct 22 10:25:30 firewall kernel: IN=eth0 OUT= SRC=198.51.100.75 DST=10.0.0.60 PROTO=TCP SPT=54321 DPT=3389 DROP
+Oct 22 10:30:45 firewall kernel: IN=eth0 OUT= SRC=91.109.190.10 DST=10.0.0.100 PROTO=TCP SPT=443 DPT=8080 ACCEPT
