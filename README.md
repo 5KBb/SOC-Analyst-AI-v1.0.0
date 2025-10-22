@@ -332,10 +332,7 @@ Questo progetto è rilasciato sotto licenza MIT. Vedi [LICENSE](LICENSE)
 
 Sviluppato per supportare Security Operations Centers nell'analisi automatizzata delle minacce.
 
-## 🔐 Security
-
-Per segnalazioni di vulnerabilità, contatta: security@example.com
-
 ---
 
 **⚠️ Disclaimer**: Questo tool è progettato per uso legittimo in ambito di sicurezza informatica. L'autore non è responsabile per usi impropri.
+
