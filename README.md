@@ -315,11 +315,6 @@ pytest --cov=src tests/
 # Test specifico
 pytest tests/test_parsers.py
 ```
-
-## 📚 Documentazione
-
-Per documentazione completa, consulta la [Wiki](docs/wiki.md)
-
 ## 🤝 Contributi
 
 I contributi sono benvenuti! Vedi [CONTRIBUTING.md](CONTRIBUTING.md)
@@ -335,4 +330,5 @@ Sviluppato per supportare Security Operations Centers nell'analisi automatizzata
 ---
 
 **⚠️ Disclaimer**: Questo tool è progettato per uso legittimo in ambito di sicurezza informatica. L'autore non è responsabile per usi impropri.
+
 
